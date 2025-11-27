@@ -1,7 +1,6 @@
 const CACHE_NAME = 'tea-pages-v1';
 const PRECACHE = [
-  '/',
-  '/TeaInclui/',
+  './',
   './index.html',
   './cards.html',
   './recursos.html',

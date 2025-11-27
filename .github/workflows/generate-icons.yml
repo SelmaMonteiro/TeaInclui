@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'docs/icons/*.svg'
+      - 'public/icons/*.svg'
       - '.github/workflows/generate-icons.yml'
   workflow_dispatch:
 
