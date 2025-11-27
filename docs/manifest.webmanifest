@@ -1,0 +1,20 @@
+{
+  "name": "TeaInclui",
+  "short_name": "TeaInclui",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#34d399",
+  "description": "Projeto inclusivo com acessibilidade, cartões de comunicação e modo calma.",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable any" }
+  ],
+  "shortcuts": [
+    { "name": "Início", "url": "index.html", "description": "Página inicial" },
+    { "name": "Cartões", "url": "cards.html", "description": "Cartões de comunicação" },
+    { "name": "Recursos", "url": "recursos.html", "description": "Links úteis" }
+  ]
+}

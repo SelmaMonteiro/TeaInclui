@@ -1,0 +1,122 @@
+:root {
+  --bg: #ffffff;
+  --text: #1e1e1e;
+  --primary: #3b82f6;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 8px; top: 8px; background: #000; color: #fff; padding: 8px 12px; z-index: 1000; }
+
+.topbar { display:flex; gap:16px; align-items:center; justify-content:space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); position: sticky; top:0; background: var(--bg); z-index: 10; }
+.topbar nav { display:flex; flex-wrap: wrap; gap: 8px; }
+.topbar nav a { text-decoration: none; color: var(--text); padding: 6px 8px; border-radius: 8px; }
+.topbar nav a:hover { text-decoration: underline; }
+.brand { font-weight: 700; }
+.brand .brand-icon { width: 20px; height: 20px; margin-right: 8px; vertical-align: middle; border-radius: 4px; }
+.prefs { display:flex; flex-wrap: wrap; gap: 8px; align-items:center; }
+.prefs button, .prefs input[type="range"] { padding: 6px 10px; }
+
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.hero h1 { font-size: 1.8rem; margin: 0 0 8px; }
+.hero p { color: var(--muted); }
+.features { list-style: disc; padding-left: 20px; }
+
+.cards-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.card { display:flex; flex-direction: column; align-items:center; justify-content:center; gap: 8px; padding: 16px; font-size: 1.2rem; border:1px solid var(--border); border-radius: 12px; background:#fafafa; cursor:pointer; min-height: 120px; }
+.card:focus { outline: 3px solid #60a5fa; }
+.add-card { display:flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 20px; }
+.add-card input { padding: 8px; }
+.add-card button { padding: 8px 12px; }
+
+.resources { list-style: none; padding: 0; }
+.resources li { margin: 8px 0; }
+.resources a { color: var(--primary); }
+
+.feedback-form { display:flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.feedback-form input, .feedback-form textarea { padding: 8px; border: 1px solid var(--border); border-radius: 8px; }
+.feedback-form button { padding: 10px 14px; background: var(--primary); color: white; border: 0; border-radius: 8px; cursor: pointer; }
+.feedback-form button:hover { opacity: .9; }
+.notice { padding: 8px 12px; border-radius: 8px; margin-bottom: 12px; }
+.notice.success { background: #e0ffe6; border: 1px solid #9ae6b4; }
+.notice.error { background: #ffe0e0; border: 1px solid #fca5a5; }
+
+.footer { border-top: 1px solid var(--border); padding: 16px; text-align: center; color: var(--muted); }
+
+/* Preferências */
+html.contrast-high { --bg: #000000; --text: #ffffff; --primary: #22d3ee; --muted: #e5e7eb; --border: #444; }
+html.dyslexic body { letter-spacing: 0.03em; word-spacing: 0.05em; font-family: Verdana, Arial, sans-serif; }
+html.calm { --bg: #0b1e24; --text: #d1fae5; --primary: #34d399; --muted: #a7f3d0; --border: #164e63; }
+
+/* Exercício de respiração quando modo calma ativo */
+.calm .calm-instructions { margin-top: 16px; }
+.calm .breath {
+  width: 120px; height: 120px; border-radius: 50%;
+  margin: 24px auto; background: var(--primary);
+  animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+
+/* Reduzir movimento */
+html.reduce-motion * { animation: none !important; transition: none !important; }
+
+/* Tamanho de fonte dinâmico */
+html.font-90 { font-size: 90%; }
+html.font-100 { font-size: 100%; }
+html.font-110 { font-size: 110%; }
+html.font-120 { font-size: 120%; }
+html.font-130 { font-size: 130%; }
+
+/* Overlay de exercício de respiração (visível em qualquer página) */
+.calm-overlay {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 320px;
+  max-width: calc(100% - 32px);
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  padding: 12px;
+  z-index: 1000;
+}
+.calm-overlay h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.calm-overlay .calm-text { margin: 8px 0; color: var(--muted); min-height: 1.4em; }
+.calm-overlay .controls { display:flex; gap:8px; flex-wrap:wrap; }
+.calm-overlay .controls button { padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); background: #f1f5f9; color: #0f172a; cursor: pointer; }
+.calm-overlay .controls button.primary { background: var(--primary); color: #fff; border: none; }
+.calm-overlay .breath { width: 100px; height: 100px; margin: 8px auto; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .topbar { flex-direction: column; align-items: stretch; gap: 10px; }
+  .brand { font-size: 1.1rem; }
+  .prefs { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+  .prefs button { min-height: 44px; }
+  .prefs input[type="range"] { width: 100%; }
+  .hero h1 { font-size: 1.5rem; }
+  main { padding: 0 12px; }
+}
+
+@media (max-width: 480px) {
+  .cards-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .calm-overlay { left: 0; right: 0; bottom: 0; width: auto; border-radius: 12px 12px 0 0; padding: 16px; }
+}

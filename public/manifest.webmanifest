@@ -1,0 +1,22 @@
+{
+  "name": "TeaInclui",
+  "short_name": "TeaInclui",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#34d399",
+  "description": "Projeto inclusivo com acessibilidade, cartões de comunicação e modo calma.",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable any" },
+    { "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAQAAAB1VQkVAAAAC0lEQVR4nGNgYGBgAAAABQABv4X6NQAAAABJRU5ErkJggg==", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAQAAABkTn0zAAAAC0lEQVR4nGNgYGBgAAAABQABv4X6NQAAAABJRU5ErkJggg==", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Início", "url": "/", "description": "Página inicial" },
+    { "name": "Cartões", "url": "/index.php?page=cards", "description": "Cartões de comunicação" },
+    { "name": "Recursos", "url": "/index.php?page=recursos", "description": "Links úteis" }
+  ]
+}

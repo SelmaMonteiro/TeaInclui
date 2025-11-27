@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offline — TeaInclui</title>
+  <meta name="theme-color" content="#34d399">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root { --bg:#ffffff; --text:#1e1e1e; --muted:#6b7280; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width:680px; margin: 40px auto; padding: 0 16px; }
+    h1 { font-size: 1.6rem; margin-bottom: 10px; }
+    p { color: var(--muted); }
+    .tips { margin-top: 16px; }
+    .tips li { margin: 6px 0; }
+  </style>
+  </head>
+<body>
+  <main>
+    <h1>Você está offline</h1>
+    <p>Algumas páginas podem não estar disponíveis sem conexão.
+       Assim que a internet voltar, o conteúdo será carregado normalmente.</p>
+    <ul class="tips">
+      <li>Tente novamente em alguns instantes;</li>
+      <li>Verifique o Wi‑Fi ou dados móveis;</li>
+      <li>As páginas principais e arquivos estáticos foram salvos para navegação básica.</li>
+    </ul>
+  </main>
+  <script>
+    // registrar SW caso carregado diretamente
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    }
+  </script>
+</body>
+</html>
