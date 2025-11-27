@@ -57,6 +57,23 @@ main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
 /* Estado ativo acessível na navegação */
 .topbar nav a[aria-current="page"] { background: #eef2ff; border: 1px solid var(--border); border-radius: 8px; }
 
+/* Destaques na home */
+.highlights { margin-top: 20px; }
+.highlights h2 { font-size: 1.3rem; margin: 0 0 10px; }
+.highlights-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.highlight-card { display:flex; gap: 10px; align-items: center; border:1px solid var(--border); border-radius: 12px; padding: 14px; background:#fff; text-decoration: none; color: var(--text); }
+.highlight-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+.highlight-card .icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink:0; }
+.highlight-card .title { font-weight: 600; }
+.highlight-card .desc { color: var(--muted); font-size: .95rem; }
+
+/* Rodapé com links rápidos */
+.footer { border-top: 1px solid var(--border); padding: 16px; text-align: center; color: var(--muted); }
+.footer .footer-links { display:flex; justify-content:center; gap: 16px; flex-wrap:wrap; margin-bottom: 8px; }
+.footer .footer-links a { color: var(--text); text-decoration: none; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: #f8fafc; }
+.footer .footer-links a:hover { text-decoration: underline; }
+.footer .note { font-size: .9rem; color: var(--muted); }
+
 .feedback-form { display:flex; flex-direction: column; gap: 10px; max-width: 560px; }
 .feedback-form input, .feedback-form textarea { padding: 8px; border: 1px solid var(--border); border-radius: 8px; }
 .feedback-form button { padding: 10px 14px; background: var(--primary); color: white; border: 0; border-radius: 8px; cursor: pointer; }
