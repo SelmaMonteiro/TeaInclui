@@ -9,8 +9,9 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="welcome">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
   <header class="topbar" role="banner">
     <div class="brand" aria-label="Marca">
@@ -34,13 +35,8 @@
   </header>
   <main id="conteudo" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-header">
-        <img src="icons/app-icon.svg" alt="Ícone TeaInclui" class="hero-illustration" aria-hidden="true">
-        <div>
-          <h1 id="hero-title">Bem-vindo(a) ao TeaInclui</h1>
-          <span class="subtitle">Ferramentas simples e adaptáveis para comunicação acessível</span>
-        </div>
-      </div>
+      <h1 id="hero-title">Bem-vindo(a) ao TeaInclui</h1>
+      <span class="subtitle">Ferramentas simples e adaptáveis para comunicação acessível</span>
       <p>
         Um espaço digital pensado para acolher e facilitar a comunicação de pessoas autistas,
         com ferramentas simples, acessíveis e adaptáveis.
@@ -54,49 +50,9 @@
       <div class="calm-instructions" aria-live="polite">
         Ative o "Modo calma" para ver um exercício de respiração guiado.
       </div>
-      <div class="cta-buttons" role="group" aria-label="Ações principais">
-        <a class="btn primary" href="cards.html">Explorar cartões</a>
-        <a class="btn" href="recursos.html">Ver recursos</a>
-        <span class="badge" aria-hidden="true">PWA offline</span>
-      </div>
-    </section>
-
-    <section class="highlights" aria-labelledby="highlights-title">
-      <h2 id="highlights-title">Destaques</h2>
-      <div class="highlights-grid" role="list">
-        <a class="highlight-card" role="listitem" href="cards.html">
-          <img class="icon" src="icons/icon-192.png" alt="" aria-hidden="true">
-          <div>
-            <div class="title">Cartões de comunicação</div>
-            <div class="desc">Use emojis e personalize cartões para o dia a dia.</div>
-          </div>
-        </a>
-        <a class="highlight-card" role="listitem" href="recursos.html">
-          <img class="icon" src="icons/icon-512.png" alt="" aria-hidden="true">
-          <div>
-            <div class="title">Recursos úteis</div>
-            <div class="desc">Materiais de apoio e links confiáveis para consulta.</div>
-          </div>
-        </a>
-        <a class="highlight-card" role="listitem" href="feedback.html">
-          <img class="icon" src="icons/maskable-512.png" alt="" aria-hidden="true">
-          <div>
-            <div class="title">Feedback</div>
-            <div class="desc">Conte-nos sua experiência para melhorar o TeaInclui.</div>
-          </div>
-        </a>
-      </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="footer-links" aria-label="Links rápidos">
-      <a href="index.html">Início</a>
-      <a href="cards.html">Cartões</a>
-      <a href="recursos.html">Recursos</a>
-      <a href="feedback.html">Feedback</a>
-    </div>
-    <div class="note">TeaInclui — PWA estático para demonstração. Preferência de acessibilidade disponível no topo.</div>
-  </footer>
+  <footer class="footer">TeaInclui — PWA estático para demonstração</footer>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
