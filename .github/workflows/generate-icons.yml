@@ -1,0 +1,48 @@
+name: Generate App Icons
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/icons/*.svg'
+      - '.github/workflows/generate-icons.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Install SVG to PNG tools (librsvg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends librsvg2-bin
+
+      - name: Generate PNGs from SVGs
+        run: |
+          set -e
+          rsvg-convert docs/icons/app-icon.svg -w 192 -h 192 -o docs/icons/icon-192.png
+          rsvg-convert docs/icons/app-icon.svg -w 512 -h 512 -o docs/icons/icon-512.png
+          rsvg-convert docs/icons/app-icon.svg -w 180 -h 180 -o docs/apple-touch-icon.png
+          # Opcional: gerar também uma versão maskable em PNG
+          rsvg-convert docs/icons/maskable.svg -w 512 -h 512 -o docs/icons/maskable-512.png || true
+
+      - name: Commit changes if any
+        run: |
+          if [[ -n $(git status --porcelain docs/icons/icon-192.png docs/icons/icon-512.png docs/apple-touch-icon.png docs/icons/maskable-512.png 2>/dev/null) ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add docs/icons/icon-192.png docs/icons/icon-512.png docs/apple-touch-icon.png docs/icons/maskable-512.png || true
+            git commit -m "chore(icons): generate PNGs from SVGs (192/512/180)"
+            git push
+          else
+            echo "No icon changes to commit."
+          fi
