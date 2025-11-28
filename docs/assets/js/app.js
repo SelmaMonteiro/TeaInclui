@@ -167,10 +167,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const prefs = Object.assign({ contrast:false, dyslexic:false, reduceMotion:false, calm:false, fontScale:100 }, getPrefs());
 
-  document.getElementById('toggleContrast')?.addEventListener('click', () => { prefs.contrast = !prefs.contrast; savePrefs(prefs); applyPrefs(); });
+  // Ao ativar Alto contraste, desativa Modo calma para evitar paletas escuras conflitantes
+  document.getElementById('toggleContrast')?.addEventListener('click', () => {
+    prefs.contrast = !prefs.contrast;
+    if (prefs.contrast) { prefs.calm = false; }
+    savePrefs(prefs);
+    applyPrefs();
+  });
   document.getElementById('toggleDyslexic')?.addEventListener('click', () => { prefs.dyslexic = !prefs.dyslexic; savePrefs(prefs); applyPrefs(); });
   document.getElementById('toggleMotion')?.addEventListener('click', () => { prefs.reduceMotion = !prefs.reduceMotion; savePrefs(prefs); applyPrefs(); });
-  document.getElementById('toggleCalm')?.addEventListener('click', () => { prefs.calm = !prefs.calm; savePrefs(prefs); applyPrefs(); });
+  // Ao ativar Modo calma, desativa Alto contraste para preservar a paleta calma
+  document.getElementById('toggleCalm')?.addEventListener('click', () => {
+    prefs.calm = !prefs.calm;
+    if (prefs.calm) { prefs.contrast = false; }
+    savePrefs(prefs);
+    applyPrefs();
+  });
   document.getElementById('fontScale')?.addEventListener('input', (e) => { prefs.fontScale = Number(e.target.value); savePrefs(prefs); applyPrefs(); });
   document.getElementById('readPage')?.addEventListener('click', () => {
     const main = document.getElementById('conteudo');
