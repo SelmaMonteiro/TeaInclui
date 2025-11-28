@@ -14,6 +14,16 @@ function applyPrefs() {
   const fontScale = document.getElementById('fontScale');
   if (fontScale) fontScale.value = scale;
 
+  // Atualiza estados ARIA dos botões (melhor feedback de acessibilidade)
+  const btnContrast = document.getElementById('toggleContrast');
+  const btnDyslexic = document.getElementById('toggleDyslexic');
+  const btnMotion = document.getElementById('toggleMotion');
+  const btnCalm = document.getElementById('toggleCalm');
+  btnContrast?.setAttribute('aria-pressed', !!p.contrast);
+  btnDyslexic?.setAttribute('aria-pressed', !!p.dyslexic);
+  btnMotion?.setAttribute('aria-pressed', !!p.reduceMotion);
+  btnCalm?.setAttribute('aria-pressed', !!p.calm);
+
   if (p.calm) { ensureCalmOverlay(); } else { destroyCalmOverlay(); }
 }
 
