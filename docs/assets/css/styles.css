@@ -18,13 +18,22 @@ body {
 /* Estilo somente para a página Bem-vindo */
 body.welcome { background: #eef6ff; }
 body.welcome .hero { background: transparent; border: 0; box-shadow: none; padding: 24px 0; }
-body.welcome .hero h1 { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-weight: 700; letter-spacing: .02em; }
-body.welcome .subtitle { color: #3b82f6; font-weight: 600; }
+body.welcome main { margin-top: 28px; }
+body.welcome .hero h1 { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-weight: 700; letter-spacing: .02em; font-size: 2.25rem; margin: 0 0 6px; }
+body.welcome .subtitle { color: #3b82f6; font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; }
+body.welcome .hero p { color: var(--text); max-width: 68ch; }
+body.welcome .features { margin-top: 10px; }
+body.welcome .features li { margin: 6px 0; }
 
 /* Preservar legibilidade no modo alto contraste */
 html.contrast-high body.welcome { background: var(--bg); }
 html.contrast-high body.welcome .subtitle { color: var(--primary); }
 html.contrast-high .hero p { color: var(--text); }
+
+/* Estados de foco/hover mais visíveis nos botões de preferência */
+.prefs button:focus-visible { outline: 3px solid #60a5fa; outline-offset: 2px; }
+.prefs button:hover { background: #f1f5f9; }
+html.contrast-high .prefs button:focus-visible { outline-color: #22d3ee; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 .skip-link { position: absolute; left: -9999px; }
@@ -154,7 +163,7 @@ html.font-130 { font-size: 130%; }
   .prefs button { min-height: 44px; }
   .prefs input[type="range"] { width: 100%; }
   .hero { padding: 18px; }
-  .hero h1 { font-size: 1.6rem; }
+  .hero h1 { font-size: 1.9rem; }
   .hero .hero-illustration { width: 48px; height: 48px; }
   main { padding: 0 12px; }
 }
