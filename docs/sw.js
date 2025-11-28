@@ -1,4 +1,5 @@
-const CACHE_NAME = 'tea-pages-v1';
+// Bump de versão para invalidar cache antigo e garantir novos assets (app.js/css)
+const CACHE_NAME = 'tea-pages-v2';
 const PRECACHE = [
   './',
   './index.html',
